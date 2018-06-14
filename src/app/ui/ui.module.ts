@@ -12,7 +12,7 @@ import { ManagementComponent } from './management/management.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-    {path: 'issueman', component: IssuanceManComponent}
+    {path: 'issueman', component: IssuanceManComponent},
     {path: 'management', component: ManagementComponent}
     ])
   ],
