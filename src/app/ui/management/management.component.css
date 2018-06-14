@@ -19,7 +19,6 @@
       width: 30px;
       height: 30px;
       content: counter(step);
-      counter-increment: step;
       line-height: 30px;
       border: 2px solid #7d7d7d;
       display: block;
@@ -42,11 +41,20 @@
       content: none;
   }
   .progressbar li.active {
-      color: green;
+      color: #000099;
   }
   .progressbar li.active:before {
-      border-color: #55b776;
+      border-color: #000099;
   }
   .progressbar li.active + li:after {
-      background-color: #55b776;
+      background-color: #000099;
   }
+
+  td {
+    vertical-align: middle;
+    text-align:center;
+  }
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
