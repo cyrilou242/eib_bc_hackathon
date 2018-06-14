@@ -1,0 +1,51 @@
+<div class="container">
+	<div class=jumbotron>
+		<div class="container">
+    <h3>Create Commercial Paper Issuance</h3>
+    <form>
+      <div class="form-group">
+        <label for="issuer">Issuer</label>
+        <input type="text" class="form-control" id="issuer" placeholder="Issuing Company" required>
+      </div>
+
+      <div class="form-group"> 
+        <label for="counterparty">CounterParty</label>
+        <input type="text" class="form-control" id="counterparty" placeholder="Counter Party Company" required>
+      </div>
+
+      <!--#FIXME put specifc input for currency/int-->
+      <div class="form-group">
+        <label for="apa">Agregate Principal Amount</label>
+        <input type="currency" class="form-control" id="apa" placeholder="250,000,000$" required>
+      </div>
+
+      <div class="form-group">
+        <label for="issuedate">Issue Date</label>
+        <input type="date" class="form-control" id="apa" placeholder="250,000,000$" onfocus="(this.type='date')" required>
+      </div>
+
+      <div class="form-group">
+        <label for="maturityDate">Maturity date</label>
+        <input type="date" class="form-control" id="maturityDate" placeholder="250,000,000$" onfocus="(this.type='date')" required>
+      </div>
+ 
+      <div class="form-group">
+        <label for="discountRate">Discount Rate</label>
+        <input type="text" class="form-control" id="discountRate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="discountRate">Paying Agent</label>
+        <select class="form-control" id="discountRate" required>
+		  <option value="citibank">CitiBank</option>
+		  <option value="eib">EIB</option>
+		  <option value="other">Other</option>
+		</select>
+      </div>
+ 			<button type="submit" class="btn btn-success" style="float: right;">Create and Sign the Issuance</button>
+ 		<p><br></p>
+    </form>
+</div>
+	</div>
+</div>
+
