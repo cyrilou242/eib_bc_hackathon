@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { IssuanceManComponent } from './ui/issuance-man/issuance-man.component';
 import { ManagementComponent } from './ui/management/management.component';
-import {RouterModule, Routes} from '@angular/router';
+import { IssuevizComponent } from './ui/issueviz/issueviz.component';
+import {RouterModule, Routes, ActivatedRoute, ParamMap} from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import {RouterModule, Routes} from '@angular/router';
     UiModule,
     RouterModule.forRoot([
     {path: 'creation', component: IssuanceManComponent},
-    {path: 'management', component: ManagementComponent}
+    {path: 'management', component: ManagementComponent},
+    {path: 'issueviz/:id', component: IssuevizComponent}
     ])
   ],
   providers: [],

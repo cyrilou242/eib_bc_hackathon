@@ -4,8 +4,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IssuanceManComponent } from './issuance-man/issuance-man.component';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule, Routes, ActivatedRoute, ParamMap} from '@angular/router';
 import { ManagementComponent } from './management/management.component';
+import { IssuevizComponent } from './issueviz/issueviz.component';
+import { switchMap } from 'rxjs/operators';
 
 
 @NgModule({
@@ -13,10 +15,11 @@ import { ManagementComponent } from './management/management.component';
     CommonModule,
     RouterModule.forRoot([
     {path: 'issueman', component: IssuanceManComponent},
-    {path: 'management', component: ManagementComponent}
+    {path: 'management', component: ManagementComponent},
+    {path: 'issueviz/:id', component: IssuevizComponent}
     ])
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, IssuanceManComponent, ManagementComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, IssuanceManComponent, ManagementComponent, IssuevizComponent],
   exports: [LayoutComponent]
 
 })
