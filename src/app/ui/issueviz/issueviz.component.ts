@@ -15,7 +15,7 @@ export class IssuevizComponent implements OnInit {
   ) { }
 
 ngOnInit() {
-	public id = this.route.snapshot.paramMap.get('id')
+	public id: = this.route.snapshot.paramMap.get('id')
 }
 
 }
