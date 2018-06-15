@@ -20,7 +20,7 @@
       height: 30px;
       content: counter(step);
       line-height: 30px;
-      border: 2px solid #7d7d7d;
+      border: 20px solid #7d7d7d;
       display: block;
       text-align: center;
       margin: 0 auto 10px auto;
@@ -41,13 +41,15 @@
       content: none;
   }
   .progressbar li.active {
-      color: #000099;
+      color: #0d9900;
   }
   .progressbar li.active:before {
-      border-color: #000099;
+      border-color: #0d9900;
+      background-color: #0d9900;
+
   }
   .progressbar li.active + li:after {
-      background-color: #000099;
+      background-color: #0d9900;
   }
 
   td {
@@ -56,5 +58,5 @@
   }
 
 th, td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 5px solid #ddd;
 }
