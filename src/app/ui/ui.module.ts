@@ -16,6 +16,7 @@ import { switchMap } from 'rxjs/operators';
     RouterModule.forRoot([
     {path: 'issueman', component: IssuanceManComponent},
     {path: 'management', component: ManagementComponent},
+    {path: '', component: ManagementComponent},
     {path: 'issueviz/:id', component: IssuevizComponent}
     ])
   ],

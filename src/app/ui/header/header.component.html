@@ -1,23 +1,19 @@
 <nav class="navbar navbar-dark bg-dark mb-5">
   <a class="navbar-brand" href="/">European Commercial Paper - Management Interface</a>
+  <div class="logo-div"><img src="../../../assets/60years_logo.png" alt="60 years" class="img-responsive" style="width:25%"></div>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home</a>
-      <a class="nav-item nav-link" routerLink='/creation'>Issuance Creation</a>
       <a class="nav-item nav-link" routerLink="/management">Issuance Dashboard</a>
+      <a class="nav-item nav-link" routerLink='/creation'>Issuance Creation</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
-        <i class="fa fa-medium"></i>
-      </a>
+      <select class="form-control" id="userChoice">
+      <option>EIB Account</option>
+      <option>Counterparty Account</option>
+      <option>IPA Account</option>
+    </select>
     </div>
   </div>
 </nav>

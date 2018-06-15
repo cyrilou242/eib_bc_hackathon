@@ -52,6 +52,33 @@
       background-color: #0d9900;
   }
 
+
+  .progressbar li.pending {
+      color: #ee7007;
+  }
+  .progressbar li.pending:before {
+      border-color: #ee7007;
+      background-color: #ee7007;
+
+  }
+  .progressbar li.pending + li:after {
+      background-color: #ee7007;
+  }
+
+
+  .progressbar li.error {
+      color: #dd1111;
+  }
+  .progressbar li.error:before {
+      border-color: #dd1111;
+      background-color: #dd1111;
+
+  }
+  .progressbar li.error + li:after {
+      background-color: #dd1111;
+  }
+
+
   td {
     vertical-align: middle;
     text-align:center;
