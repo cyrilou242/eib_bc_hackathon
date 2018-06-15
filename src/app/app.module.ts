@@ -6,6 +6,7 @@ import { UiModule } from './ui/ui.module';
 import { IssuanceManComponent } from './ui/issuance-man/issuance-man.component';
 import { ManagementComponent } from './ui/management/management.component';
 import { IssuevizComponent } from './ui/issueviz/issueviz.component';
+import { ScriptHackComponent } from '.ui//scripthack/scripthack.component';
 import {RouterModule, Routes, ActivatedRoute, ParamMap} from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 

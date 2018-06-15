@@ -8,6 +8,7 @@ import {RouterModule, Routes, ActivatedRoute, ParamMap} from '@angular/router';
 import { ManagementComponent } from './management/management.component';
 import { IssuevizComponent } from './issueviz/issueviz.component';
 import { switchMap } from 'rxjs/operators';
+import { ScriptHackComponent } from './scripthack/scripthack.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { switchMap } from 'rxjs/operators';
     {path: 'issueviz/:id', component: IssuevizComponent}
     ])
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, IssuanceManComponent, ManagementComponent, IssuevizComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, IssuanceManComponent, ManagementComponent, IssuevizComponent, ScriptHackComponent],
   exports: [LayoutComponent]
 
 })

@@ -46,9 +46,18 @@
 		</select>
       </div>
       
- 			<button type="submit" class="btn btn-success" style= "float:right;">Create and Sign the Issuance</button>
+ 			<button type="submit" class="btn btn-success" style= "float:right;" id="issueSubmit">Create and Sign the Issuance</button>
        <p><br></p>
     </form>
 </div>
 	</div>
+
+<script-hack>alert('hoi');</script-hack>
+
+<script type="text/javascript">
+  console.log("test");
+    $("#issueSubmit").click(function() {
+            console.log("the button click worked");
+    });
+</script>  
 

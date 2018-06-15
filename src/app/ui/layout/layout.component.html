@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title></title>
-	<script src="./node_modules/web3/dist/web3.min.js"></script>
 </head>
 <body>
 <app-header></app-header>
@@ -11,10 +10,18 @@
 </div>
 <app-footer></app-footer>
 
+<script src="./node_modules/web3/dist/web3.min.js" type="text/javascript">
+	console.log("test");
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript">
+	console.log("test2");
+</script>
 
- <script
-        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script>
+<script type="text/javascript">
+	alert("test2");
+</script>
+
+<script type="text/javascript">
         if (typeof web3 !== 'undefined') {
             // when using Metamask, web3 would be injected
             web3 = new Web3(web3.currentProvider);
@@ -242,23 +249,7 @@
         //---replace the contract address with your own---
         var contract = contractABI.at(
             '0x0c2b483a273cbc87d0df56b62b5c65810ad444a4');
-      
-        $("#btnCopyright").click(function() {
-            var songlyrics = $("#songlyricstocopyright").val();
-            console.log(songlyrics);
-            contract.copyrightLyrics(
-               songlyrics,(err, result) => {});
-        });
-      
-        $("#btnVerify").click(function() {
-            var songlyrics = $("#songlyricstoverify").val();
-            contract.checkLyrics(songlyrics, (err, result) => {
-                $("#result").html(result);
-                alert(result)
-            });
-        });
-        </script>
-
+</script>
 
 </body>
 </html>
