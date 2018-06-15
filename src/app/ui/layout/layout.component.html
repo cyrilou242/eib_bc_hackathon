@@ -29,26 +29,219 @@
       
       
         //---the ABI of the contract---
-        var contractABI = web3.eth.contract(
-            [ { "constant": true, "inputs":
-            [ { "name": "lyrics",
-            "type": "string" } ], "name":
-            "checkLyrics",
-            "outputs": [ { "name": "",
-            "type": "bool"
-            } ], "payable": false, "stateMutability":
-            "view", "type": "function" }, {
-            "constant": false, "inputs": [
-            { "name": "lyrics", "type": "string"
-            } ], "name": "copyrightLyrics",
-            "outputs": [],
-            "payable": false, "stateMutability":
-            "nonpayable",
-            "type": "function" } ]);
+        var contractABI = web3.eth.contract([{
+		"constant": false,
+		"inputs": [],
+		"name": "Administration",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_cp",
+				"type": "address"
+			}
+		],
+		"name": "counterpartyConfirmation",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_issueDate",
+				"type": "string"
+			},
+			{
+				"name": "_maturityDate",
+				"type": "string"
+			},
+			{
+				"name": "_custodianAddress",
+				"type": "address"
+			},
+			{
+				"name": "_counterPartyAddress",
+				"type": "address"
+			}
+		],
+		"name": "createCommercialPaper",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_cp",
+				"type": "address"
+			}
+		],
+		"name": "custodianConfirmation",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCommercialPaperAddresses",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCounterPartyContracts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_cp",
+				"type": "address"
+			}
+		],
+		"name": "getCpInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCustodianContracts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getIssuingBankContracts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getMyContractAddresses",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "returnHelloWorld",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_cp",
+				"type": "address"
+			}
+		],
+		"name": "returnHelloWorld2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
       
         //---replace the contract address with your own---
         var contract = contractABI.at(
-            '0xdbe99ce4ffd917796d85e134814c5fae625c6555');
+            '0x0c2b483a273cbc87d0df56b62b5c65810ad444a4');
       
         $("#btnCopyright").click(function() {
             var songlyrics = $("#songlyricstocopyright").val();
