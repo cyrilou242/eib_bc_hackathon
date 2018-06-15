@@ -1,5 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./node_modules/web3/dist/web3.min.js"></script>
+</head>
+<body>
 <app-header></app-header>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
+
+
+ <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        if (typeof web3 !== 'undefined') {
+            // when using Metamask, web3 would be injected
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            // this block will be executed if you are not
+            // using Metamask
+            web3 = new Web3(new
+                Web3.providers.HttpProvider(
+                "http://localhost:8545"));
+        }
+      
+        //---the ABI of the contract---
+        var contractABI = web3.eth.contract(
+            [ { "constant": true, "inputs":
+            [ { "name": "lyrics",
+            "type": "string" } ], "name":
+            "checkLyrics",
+            "outputs": [ { "name": "",
+            "type": "bool"
+            } ], "payable": false, "stateMutability":
+            "view", "type": "function" }, {
+            "constant": false, "inputs": [
+            { "name": "lyrics", "type": "string"
+            } ], "name": "copyrightLyrics",
+            "outputs": [],
+            "payable": false, "stateMutability":
+            "nonpayable",
+            "type": "function" } ]);
+      
+        //---replace the contract address with your own---
+        var contract = contractABI.at(
+            '0xdbe99ce4ffd917796d85e134814c5fae625c6555');
+      
+        $("#btnCopyright").click(function() {
+            var songlyrics = $("#songlyricstocopyright").val();
+            console.log(songlyrics);
+            contract.copyrightLyrics(
+               songlyrics,(err, result) => {});
+        });
+      
+        $("#btnVerify").click(function() {
+            var songlyrics = $("#songlyricstoverify").val();
+            contract.checkLyrics(songlyrics, (err, result) => {
+                $("#result").html(result);
+                alert(result)
+            });
+        });
+        </script>
+
+
+</body>
+</html>
+
